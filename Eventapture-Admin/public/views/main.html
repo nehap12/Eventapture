@@ -1,0 +1,77 @@
+
+<div class="container jumbotron">
+    <div class="row">
+        <div class="col-md-12" ng-if="!showStories">
+            <h3>{{message}}</h3>
+        </div>
+        <div class="col-md-12" ng-if="showStories">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form ng-submit="addNew()">
+                        <table class="table table-striped table-bordered table-hover" >
+                            <thead>
+                            <tr>
+                                <th class="src" >Source</th>
+                                <th class="src" >Region</th>
+                                <th class="headline">Headline</th>
+                                <th class="src" >Personality Tag</th>
+                                <th class="src">Interest Tag</th>
+                                <th class="src">Time Elapsed</th>
+                                <th class="action" style=" text-align: center;">Action</th>
+
+                            </tr>
+                            </thead>
+                            <tbody ng-repeat="story in suggestedStories">
+                            <tr>
+                                <td class="src"> {{story.source}}
+                                </td>
+                                <td class="src"> {{story.region}}
+                                </td>
+                                <td>
+                                    {{story.headline}}
+                                </td>
+
+                                <td class="src">
+                                    {{story.personalityTag[0]}}  {{story.personalityTag[1]}}  {{story.personalityTag[2]}}
+                                </td>
+                                <td class="src"> {{story.interestTag[0]}},  {{story.interestTag[1]}},  {{story.interestTag[2]}}</td>
+                                <td class="src"> {{story.reminderCount}}</td>
+                                <td>
+                                    <a id="toggle" class="btn btn-link" ng-init="toggle[$index] = false" ng-click="toggle[$index] = !toggle[$index] ; commentPopup(story.relatedStories)">
+                                        <span class="glyphicon glyphicon-plus-sign" ng-if="!toggle[$index]"></span>
+                                        <span class="glyphicon glyphicon-minus-sign" ng-if="toggle[$index]"></span>
+                                    </a>
+
+                                    <a >
+                                        <span class="glyphicon glyphicon-cog " data-toggle="modal" data-target="#myModal" id="{{story.id}}"> </span>       
+                                    </a>
+                                    &nbsp;&nbsp;
+                                    <modal></modal>
+                                    <a>
+                                        <span class="glyphicon glyphicon-remove-circle" ng-hide="!suggestedStories.length" ng-click="remove(story._id)" value="Remove" ng-model="story.selected"></span>
+                                    </a>
+                                    &nbsp;&nbsp;
+                                    <a ng-href="#/suggestedStory/{{story._id}}" ng-click="sendStory(story)">
+                                        <div class="glyphicon glyphicon-share"></div>
+                                    </a>
+
+                                </td>
+
+                            </tr>
+
+                            <tr ng-if="toggle[$index]">
+                                <td colspan="7">
+                                <popup></popup>
+                                </td>
+                            </tr>
+
+                            
+                            </tbody>
+
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

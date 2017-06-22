@@ -1,0 +1,7 @@
+.idea/
+node_modules
+routes/test.route.js
+data
+config/amazon.config.json
+uploads/*
+.DS_Store

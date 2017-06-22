@@ -1,0 +1,113 @@
+<div class="container jumbotron">
+
+&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+<!--<h5> <a href="index.html">List</a> >>> Suggested Story</h5>-->
+  
+  <div class="panel-group">
+    
+    <div class="panel panel-primary">
+      <div class="panel-heading">Headline</div>
+      <div class="panel-body">{{suggestedStory.headline}}</div>
+    </div>
+
+    <br>
+    <br>
+    <div class="panel panel-primary">
+      <div class="panel-heading">Description</div>
+      <div class="panel-body">{{suggestedStory.description}}</div>
+    </div>
+
+    <br>
+    <br>
+    <div class="panel panel-primary">
+      <div class="panel-heading">Source</div>
+      <div class="panel-body">{{suggestedStory.source}}</div>
+    </div>
+
+    <br>
+    <br>
+
+
+<div class="container-fluid">
+    
+
+ <div class="row">
+ 
+  <div class="col-sm-4">
+
+    
+<div class="w3-container">
+  <h2>Suggested Audio</h2>
+
+  <div class="w3-card-12" style="width:100%">
+    <div class="w3-container w3-center">
+      <div ng-repeat="audioURL in suggestedStory.assets.audio">
+        <audio ng-src={{audioURL}} controls></audio>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+ <div class="col-sm-4">
+
+    
+<div class="w3-container">
+  <h2>Suggested Video</h2>
+
+  <div class="w3-card-12" style="width:100%">
+    <div class="w3-container w3-center">
+      <div ng-repeat="video in suggestedStory.assets.video">
+        <video ng-src={{video}} controls></video>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+ <div class="col-sm-4">
+
+    
+<div class="w3-container">
+  <h2>Suggested Picture</h2>
+
+  <div class="w3-card-12" style="width:100%">
+    <div class="w3-container w3-center">
+      <div ng-repeat="image in suggestedStory.assets.image">
+        <img ng-src={{image}} style="width:70px;height:70px;">
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+</div>
+<br><br><br><br><br><br>
+<div class="jumbotron text-center">
+ 
+<div class="container">
+  <div class="col-md-3"></div>
+<div class="col-md-6">
+  <a ng-href="#/startstory" >
+                              
+  <button type="button" class="btn btn-primary btn-lg"  >Start this Story</button>
+ </a>
+</div>
+ 
+  <div class="col-md-3"></div>
+</div>
+</div>
+
+
+
+</div>
+
+
+</div>
+  
+
+  
+  </div>
+

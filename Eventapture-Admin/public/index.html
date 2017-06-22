@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <title>Approval Tool</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular.min.js"></script>
+   <script data-require="angular-animate.js@1.2.6" data-semver="1.2.6" src="http://code.angularjs.org/1.2.6/angular-animate.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-route.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.2/angular-resource.min.js"></script>
+
+    <!--Angular Custom Files-->
+    <script src="./jsScript.js"></script>
+ <script src="./js/controllers/ListController.js"></script>
+ <script src="./js/controllers/ViewController.js"></script>
+ <script src="./js/services/MainService.js"></script>
+    
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="./stylesheets/approvalTool.css">
+
+
+</head>
+<body>
+<!--Header -->
+<nav class="navbar navbar-inverse">
+ <div class="container-fluid">
+  <div class="navbar-header">
+   <a class="navbar-brand">Approval Tool</a>
+  </div>
+  <ul class="nav navbar-nav">
+   <li><a href="#/"><span class="glyphicon glyphicon-home"></span></a></li>
+  </ul>
+
+ </div>
+ <search></search>
+</nav>
+
+<div>
+    <div ng-view></div>
+</div>
+
+</body>
+
+</html>

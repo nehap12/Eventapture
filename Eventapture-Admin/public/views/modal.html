@@ -1,0 +1,28 @@
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Display After</h4>
+      </div>
+      <div class="modal-body">
+
+    
+
+     <select class="form-control" ng-model="selectedItem" ng-change="change({{story.id}})" ng-model="value" >
+        <option value=""> </option>
+      <option ng-mode="15"value="15 Minutes">15 Minutes</option>
+  
+      </select>
+
+  </div>
+      
+      <div class="modal-footer">
+       <button type="button" class="btn btn-primary pull-right"  class="close" data-dismiss="modal" value="{{story._id}}" ng-click="patchPopup(story._id, '15')">Remind Me Later</button>
+      </div>
+    </div>
+
+  </div>
+</div>
